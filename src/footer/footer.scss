@@ -1,8 +1,9 @@
-
 footer{
+    display: flex;
     background-color: #0067A3;
     min-height: 56px;
     overflow: hidden;
+    justify-content: space-between;
     h2{
         margin: 17px 0 0 21px;
         font-weight: 300;
@@ -10,4 +11,11 @@ footer{
         line-height: 21px;
         color: #fff;
     }
+    .block-task{
+        display: flex;
+    }
+    .block-footer{
+        margin-right: 20px;
+    }
 }
+

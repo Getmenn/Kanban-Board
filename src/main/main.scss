@@ -1,6 +1,6 @@
 main{
     background-color: #0079BF ;
-    min-height: 89vh;
+    min-height: 88vh;
     overflow: hidden;
     display: flex;
     align-items: flex-start;
@@ -22,7 +22,11 @@ main{
 .card-box{
     display: flex;
     flex-direction: column;
-    align-items: baseline;
+    
+    a{
+        text-decoration: none;
+        color: #000;
+    }
     .button{
         background-color: transparent;
         border:none;
@@ -62,5 +66,46 @@ main{
         border: none;
         border-bottom: 1px solid #000;
         outline:none;
+    }
+    select{
+        margin: 7px 12px;
+        width: -webkit-fill-available;
+        border: none;
+        cursor: pointer;
+        appearance: none;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        background-image: url(../icons/arrows_bottom_chevron_direction_move_navigation_up_icon_123224.svg);
+        background-repeat: no-repeat;
+        background-position: right 0rem top 50%;
+        background-size: 1.3rem auto;
+    }
+}
+
+.taskpage{
+    position: absolute;
+    left: 18px;
+    top: 76px;
+    background-color: #fff;
+    width: 1813px;
+    height: 748px;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 22px 25px;
+    
+    p{
+        float: right;
+        font-size: 35px;
+    }
+    textarea{
+        font-family: 'Roboto';
+        font-style: normal;
+        margin-top: 35px;
+        border: none;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21px;
+        cursor: pointer;
     }
 }

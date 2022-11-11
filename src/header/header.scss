@@ -2,12 +2,69 @@ header{
     height: 56px;
     background: #0067A3;
     color: #fff ;
-    overflow: hidden;
-    h2{
-        margin: 10px 0 0 20px;
-        font-weight: 300;
-        font-size: 28px;
-        line-height: 33px;
+    .title{
+        overflow: hidden;
+        h2{
+            margin: 10px 0 0 20px;
+            font-weight: 300;
+            font-size: 28px;
+            line-height: 33px;
+        }
+    }
+}
+
+.personLog
+{
+    float: right;
+    display: flex;
+    margin-top: -36px;
+    align-items: center;
+    cursor: pointer;
+    .avatar{
+        height: 41px;
+        width: 41px;
+        border-radius: 50%;
+    }
+    .arrow{
+        filter: invert(1);
+        margin-right: 25px;
+        margin-left: 3px;
+        height: 27px;
+        width: 25px;
+        &.active{
+            transform: rotate(180deg);
+        }
+    }
+}
+
+
+
+.dropDownList{
+    position: absolute;
+    right: 15px;
+    margin-top: 23px;
+    width: 124px;
+    height: 66px;
+    color: black;
+    background-color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 5px;
+    p{
+        margin: 10px 10px;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(226, 225, 225);
+        }
+    }
+    .dropDownList_triangle{
+        position: absolute;
+        right: 30px;
+        margin-top: -19px;
+        border-left: 13px solid transparent;
+        border-right: 13px solid transparent;
+        border-bottom: 20px solid #fff;
     }
 }
 

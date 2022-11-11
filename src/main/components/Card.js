@@ -1,24 +1,29 @@
 import React, { useState } from "react";
 import InputOrSelect from "./InputOrSelect";
+import {Routing} from "./Routing";
+import { BrowserRouter as Router, Route, Routes, NavLink, Navigate  } from "react-router-dom";
 
-export default function Card({name, dataTask, addValue, task, addTask}){
+export default function Card({name, dataTask, dataBefor, addValue, task, addTask}){
     const [visable, setVisable] = useState('hidden'); //видимые и невидимые блоки
     const [active, setActive] = useState(''); //добавление кнопке класса
     
     const handleClick = () =>{
         setVisable(visable === 'hidden' ? 'unset': 'hidden')
         setActive(active === '' ? 'active' : '')
-        if(task !== '' && visable === 'unset'){
-            addTask(task)
-        }    
+        if(name === 'Backlog' && task !== '' && visable === 'unset'){
+            addTask(name, dataTask, task);  //для Backlog
+        }
+        else if(task !== '' && visable === 'unset'){
+            addTask(name, dataTask, task, dataBefor); 
+        }  
     }
 
     return(
         <div className="card">
             <h3>{name}</h3>
             <div className="card-box">
-                {dataTask !== '' ? dataTask.map((item,id) => <div className="card-box__task" key={id}><p>{item.task}</p> </div>) : null}
-                <InputOrSelect visable={visable} name={name} addValue={addValue}/>
+                <Routing dataTask={dataTask} />
+                <InputOrSelect visable={visable} name={name} addValue={addValue} dataBefor={dataBefor}/>
                 <button onClick={handleClick} className={`button ${active}`}>
                     {visable === 'hidden'? '+ Add card' : 'Submit'}
                 </button>  
