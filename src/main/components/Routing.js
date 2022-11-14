@@ -9,13 +9,12 @@ export function Routing({dataTask}){
     const renderTask = () =>{ //генерация  ссылок на задачи
         if(dataTask.length > 0)
         {
-            return dataTask?.map((item, id, object) => 
+            return dataTask.map((item, id, object) => 
                 <Route exact path={`/tasks/${id}${item.iddata}/*`} key={id} element={<TaskPage object={object} item={item}/>}/>
             )   
         }  
     }
 
-    
     return (
         <>
             {dataTask.map((item,id) => 

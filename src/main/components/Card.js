@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import InputOrSelect from "./InputOrSelect";
 import {Routing} from "./Routing";
-import { BrowserRouter as Router, Route, Routes, NavLink, Navigate  } from "react-router-dom";
 
-export default function Card({name, dataTask, dataBefor, addValue, task, addTask}){
+export default function Card({name, dataTask, dataBefor, addValue, task, addTask, index}){
     const [visable, setVisable] = useState('hidden'); //видимые и невидимые блоки
     const [active, setActive] = useState(''); //добавление кнопке класса
     
@@ -11,10 +10,10 @@ export default function Card({name, dataTask, dataBefor, addValue, task, addTask
         setVisable(visable === 'hidden' ? 'unset': 'hidden')
         setActive(active === '' ? 'active' : '')
         if(name === 'Backlog' && task !== '' && visable === 'unset'){
-            addTask(name, dataTask, task);  //для Backlog
+            addTask(dataTask, name, task);  //для Backlog
         }
         else if(task !== '' && visable === 'unset'){
-            addTask(name, dataTask, task, dataBefor); 
+            addTask(dataTask, name, task, dataBefor); 
         }  
     }
 

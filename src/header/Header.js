@@ -27,10 +27,6 @@ export default function Header(){
                     <p>Profile</p>
                     <p>Log Out</p>
                 </div>
-
-                
-            
-            
         </header>
     )
 }
