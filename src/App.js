@@ -26,8 +26,7 @@ function App() {
       }
   }
   
-  const addTask = (data, name, item, dataBefor= '') =>{
-    console.log(  data, 'data');
+  const addTask = (data, name, item, dataBefor = '') =>{
     let namData;
     let nameDataBefore;
     switch(name){
@@ -43,6 +42,9 @@ function App() {
         namData=4;
         nameDataBefore = 'dataInProgress';
         break
+      default:
+        namData = 1;
+        nameDataBefore = '';
     }
     if (name === 'Backlog')
       {
@@ -51,7 +53,7 @@ function App() {
         setTask('');
       }
     else{
-        data.push({iddata: namData, task: item, description: "Add description"});
+        data.push({iddata: namData, task: item, description: dataBefor[index-1].description});
         localStorage.setItem(`data${name}`, JSON.stringify(data));
         setTask('');
         delete dataBefor[index-1];

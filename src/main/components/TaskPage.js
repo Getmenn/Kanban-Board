@@ -2,10 +2,10 @@ import React from "react";
 import { Home } from "./Routing";
 import { Route, Routes, NavLink} from "react-router-dom";
 
-function TaskPage({object, item}){
-
+function TaskPage({mass, element, name}){
     const addDescription = (e) => {
-        item.description = e.target.value;
+        element.description = e.target.value;
+        localStorage.setItem(`data${name}`, JSON.stringify(mass))  // добавление обьекта с описанием
     }
 
     return(
@@ -16,8 +16,8 @@ function TaskPage({object, item}){
             <Routes>
                 <Route path="/" element={<Home/>}/> 
             </Routes>
-            <h1>{item.task}</h1>
-            <textarea name="" id="" cols="30" rows="10" onChange={addDescription} defaultValue={item.description}/>
+            <h1>{element.task}</h1>
+            <textarea name="" id="" cols="30" rows="10" onChange={addDescription} defaultValue={element.description}/>
         </div>
     )
 }

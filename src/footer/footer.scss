@@ -19,3 +19,11 @@ footer{
     }
 }
 
+@media (min-width: 330px) and (max-width: 500px){
+    footer{
+      background-color: #0079BF;
+      .block-task, .block-footer{
+        visibility: hidden;
+      }
+    }
+  }

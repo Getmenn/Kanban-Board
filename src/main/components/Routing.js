@@ -5,12 +5,12 @@ import TaskPage from "./TaskPage";
 
 export function Home(){return(<></>)}
 
-export function Routing({dataTask}){
+export function Routing({dataTask, name}){
     const renderTask = () =>{ //генерация  ссылок на задачи
         if(dataTask.length > 0)
         {
-            return dataTask.map((item, id, object) => 
-                <Route exact path={`/tasks/${id}${item.iddata}/*`} key={id} element={<TaskPage object={object} item={item}/>}/>
+            return dataTask.map((element, id, mass) => 
+                <Route exact path={`/tasks/${id}${element.iddata}/*`} key={id} element={<TaskPage mass={mass} element={element} name={name}/>}/>
             )   
         }  
     }

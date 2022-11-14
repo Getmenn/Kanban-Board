@@ -17,3 +17,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media (min-width: 330px) and (max-width: 500px){
+  header{
+    background-color: #0079BF;
+    & .title{
+      visibility: hidden;
+    }
+  }
+
+  footer{
+    background-color: #0079BF;
+    .block-task, .block-footer{
+      visibility: hidden;
+    }
+  }
+}

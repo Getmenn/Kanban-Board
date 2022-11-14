@@ -68,3 +68,11 @@ header{
     }
 }
 
+@media (min-width: 330px) and (max-width: 500px){
+    header{
+      background-color: #0079BF;
+      & .title{
+        visibility: hidden;
+      }
+    }
+  }

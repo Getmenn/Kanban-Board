@@ -42,8 +42,17 @@ main{
         &.active {
             background-color:#0079BF;
             border-radius: 5px;
-            color:#fff
+            color:#fff;
+
+            &:hover{
+                background-color:#0266a0;
+                color:#fff;
+            }
         }
+        &:hover{
+            color: #3a4250;
+        } 
+        
     }
 }
 .card-box__task{
@@ -54,6 +63,9 @@ main{
     margin: 15px 12px;
     margin-top: 0;
     overflow: hidden;
+    &:hover{
+        background-color: rgb(199, 199, 199);
+    }
     p{
         margin: 7px 8px;
         font-weight: 600;
