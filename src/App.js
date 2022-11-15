@@ -1,28 +1,25 @@
-import React, { useState} from "react";
+import React, { useMemo, useState} from "react";
 import Header from "./header/Header"
 import Main from "./main/Main"
 import Footer from "./footer/Footer"
-import LocalStorageSet from "./localStorage/LocaStorage";
 
 
 function App() {
   const [task, setTask] = useState('');// добавление задачи из input
   const [index, setIndex] = useState('');
-   
-  LocalStorageSet();
 
-  let dataBacklog = JSON.parse(localStorage.getItem('dataBacklog')) ;
-  let dataReady = JSON.parse(localStorage.getItem('dataReady')) ;
-  let dataInProgress = JSON.parse(localStorage.getItem('dataInProgress')) ;
-  let dataFinished = JSON.parse(localStorage.getItem('dataFinished')) ;  
-
+  const dataBacklog = useMemo(() => JSON.parse(localStorage.getItem('dataBacklog'))) ;
+  const dataReady = useMemo(() => JSON.parse(localStorage.getItem('dataReady'))) ;
+  const dataInProgress = useMemo(() => JSON.parse(localStorage.getItem('dataInProgress'))) ;
+  const dataFinished = useMemo(() => JSON.parse(localStorage.getItem('dataFinished'))) ; 
+  
   const addValue = (event) =>{
-      if(event.target.selectedIndex !== null){
-          setTask(event.target.value);
-          setIndex(event.target.selectedIndex);
+      if(event.target.selectedIndex !== undefined){
+        setTask(event.target.value);
+        setIndex(event.target.selectedIndex);
       }
       else{
-          setTask(event.target.value);
+        setTask(event.target.value);
       }
   }
   
