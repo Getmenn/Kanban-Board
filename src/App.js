@@ -8,7 +8,7 @@ function App() {
   const [task, setTask] = useState('');// добавление задачи из input
   const [index, setIndex] = useState('');
 
-  const dataBacklog = useMemo(() => {JSON.parse(localStorage.getItem('dataBacklog'))},[]) ;
+  const dataBacklog = useMemo(() => JSON.parse(localStorage.getItem('dataBacklog')),[]) ;
   const dataReady = useMemo(() => JSON.parse(localStorage.getItem('dataReady')), []) ;
   const dataInProgress = useMemo(() => JSON.parse(localStorage.getItem('dataInProgress')), []) ;
   const dataFinished = useMemo(() => JSON.parse(localStorage.getItem('dataFinished')), []) ; 
@@ -17,6 +17,7 @@ function App() {
       if(event.target.selectedIndex !== undefined){
         setTask(event.target.value);
         setIndex(event.target.selectedIndex);
+        
       }
       else{
         setTask(event.target.value);
@@ -28,7 +29,7 @@ function App() {
     let nameDataBefore;
     switch(name){
       case "Ready":
-        namData=2;
+        namData = 2;
         nameDataBefore = 'dataBacklog';
         break
       case "InProgress":
@@ -75,7 +76,7 @@ function App() {
       />
       <Footer 
         dataReady = {dataReady} 
-        dataFinished={dataFinished}
+        dataFinished = {dataFinished}
       />
     </>
   );

@@ -5,7 +5,7 @@ import TaskPage from "./TaskPage";
 
 export function Home(){return(<></>)}
 
-export function Routing({dataTask, name}){
+export function Routing({dataTask = [], name}){
     const renderTask = () =>{ //генерация  ссылок на задачи
         if(dataTask.length > 0)
         {
