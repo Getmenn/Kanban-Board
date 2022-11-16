@@ -1,4 +1,4 @@
-import React, { useMemo, useState} from "react";
+import React, { useMemo, useState } from "react";
 import Header from "./header/Header"
 import Main from "./main/Main"
 import Footer from "./footer/Footer"
@@ -8,10 +8,10 @@ function App() {
   const [task, setTask] = useState('');// добавление задачи из input
   const [index, setIndex] = useState('');
 
-  const dataBacklog = useMemo(() => JSON.parse(localStorage.getItem('dataBacklog'))) ;
-  const dataReady = useMemo(() => JSON.parse(localStorage.getItem('dataReady'))) ;
-  const dataInProgress = useMemo(() => JSON.parse(localStorage.getItem('dataInProgress'))) ;
-  const dataFinished = useMemo(() => JSON.parse(localStorage.getItem('dataFinished'))) ; 
+  const dataBacklog = useMemo(() => {JSON.parse(localStorage.getItem('dataBacklog'))},[]) ;
+  const dataReady = useMemo(() => JSON.parse(localStorage.getItem('dataReady')), []) ;
+  const dataInProgress = useMemo(() => JSON.parse(localStorage.getItem('dataInProgress')), []) ;
+  const dataFinished = useMemo(() => JSON.parse(localStorage.getItem('dataFinished')), []) ; 
   
   const addValue = (event) =>{
       if(event.target.selectedIndex !== undefined){
